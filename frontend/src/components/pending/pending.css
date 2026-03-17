@@ -1,0 +1,9 @@
+
+.pending::-webkit-scrollbar {
+    display: none;
+}
+
+.pending {
+    -ms-overflow-style: none;  
+    scrollbar-width: none;  
+}

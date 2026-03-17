@@ -1,0 +1,18 @@
+services:
+  web:
+    build:
+      context: .
+      dockerfile: django.Dockerfile
+    ports:
+      - "8000:8000"
+    env_file:
+      - .env
+    environment:
+      GOOGLE_APPLICATION_CREDENTIALS: "${GOOGLE_APPLICATION_CREDENTIALS}"
+      DJANGO_SECRET_KEY: "${DJANGO_SECRET_KEY}"
+      JWT_SECRET_KEY: "${JWT_SECRET_KEY}"
+      YOU_API_KEY_RAG: "${YOU_API_KEY_RAG}"
+      YOU_API_KEY_SEARCH: "${YOU_API_KEY_SEARCH}"
+    volumes:
+      - ./storage/django_db.sqlite:/app/django_db.sqlite
+      - ./storage/chroma/chroma.sqlite3:/app/chroma.sqlite3

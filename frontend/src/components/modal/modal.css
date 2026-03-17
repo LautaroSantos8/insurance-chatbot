@@ -1,0 +1,12 @@
+
+.modal::-webkit-scrollbar {
+    display: none;
+}
+
+.modal {
+    -ms-overflow-style: none;  
+    scrollbar-width: none; 
+}
+
+
+
